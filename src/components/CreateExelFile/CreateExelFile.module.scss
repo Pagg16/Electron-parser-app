@@ -1,0 +1,46 @@
+.starRatingBtnExport {
+  outline: none;
+  background-color: #34444f;
+  color: #d9e2e6;
+  margin: 0 0 5px 0;
+  width: 171px;
+  height: 35px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.starRatingBtnExport:hover {
+  opacity: 0.9;
+}
+
+.starRatingBtnExport:active {
+  transform: scale(0.95);
+}
+
+.starRatingBtnExport_disable {
+  opacity: 0.6;
+}
+
+.starRatingBtnExport_disable:active {
+  transform: scale(1);
+}
+.starRatingBtnExport_disable:hover {
+  opacity: 0.6;
+}
+
+.starRatingBtnExportText {
+  background-color: #058e4a;
+  padding: 3px;
+  color: white;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.starRatingBtnExportIcon {
+  width: 30px;
+  margin-left: 3px;
+}

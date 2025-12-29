@@ -1,0 +1,61 @@
+.UrlInputContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid rgba(0, 0, 0, 0.622);
+  border-radius: 30px;
+  background-color: #d9e2e6;
+  height: 35px;
+}
+
+.UrlInputContainer__input {
+  height: 100%;
+  background-color: transparent;
+  font-size: 13px;
+  outline: none;
+  border: none;
+  flex: 1;
+  border-right: 2px solid rgba(0, 0, 0, 0.622); /* Правая граница */
+  border-left: 2px solid rgba(0, 0, 0, 0.622); /* Левая граница */
+  border-radius: 30px;
+  padding: 0 5px;
+}
+
+.UrlInputContainer__input::placeholder {
+  color: rgba(0, 0, 0, 0.622);
+  font-size: 13px;
+}
+
+.UrlInputContainer__btn {
+  background-color: #f0f0f0;
+  height: 100%;
+  border: none;
+  border-left: 2px solid rgba(0, 0, 0, 0.622);
+  border-radius: 30px;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 20px 0;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.UrlInputContainer__btn:hover {
+  transform: scale(0.9);
+}
+
+.UrlInputContainer__btn:active {
+  transform: scale(0.85);
+}
+
+.UrlInputContainer__btn_clear {
+  border: none;
+  border-right: 2px solid rgba(0, 0, 0, 0.622);
+  background-color: #34444f;
+  color: #d9e2e6;
+}
+
+.UrlInputContaineUnactive {
+  pointer-events: none; /* Отключает все взаимодействия с элементами */
+  opacity: 0.5; /* Притемняем элемент */
+}

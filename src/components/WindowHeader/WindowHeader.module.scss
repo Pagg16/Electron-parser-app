@@ -1,0 +1,198 @@
+.WindowHeader {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px 2px;
+  color: white;
+  font-size: 16px;
+  -webkit-app-region: drag;
+  background-color: #d9e2e6;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.622);
+  position: relative;
+  z-index: 200;
+}
+
+:not(.WindowHeader) {
+  -webkit-app-region: no-drag;
+}
+
+.Controls {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.ControlBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 37px;
+  background-color: #444;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.iconCollapse {
+  width: 16px;
+  height: 2px;
+  background-color: #d9e2e6;
+}
+
+.iconExpand {
+  width: 11px;
+  height: 11px;
+  border: 2px solid #d9e2e6;
+}
+
+.iconClose {
+  position: relative;
+  display: inline-block;
+}
+
+.iconClose::before,
+.iconClose::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background-color: #d9e2e6;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+}
+
+.iconClose::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.iconClose::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.ControlBtn:hover {
+  background-color: #666;
+}
+
+.notUrlPopup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 0;
+  border-radius: 20px;
+  z-index: 100;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #a9b4b9;
+  height: 0; /* Начальная высота */
+  overflow: hidden; /* Чтобы скрыть содержимое при height: 0 */
+  transition: height 0.3s ease-in-out, padding 0.5s ease-in-out;
+}
+
+.notUrlPopup_open {
+  border: 2px solid rgba(0, 0, 0, 0.622);
+  height: 150px;
+  padding: 10px;
+}
+
+.notUrlPopupTitle {
+  font-weight: bold;
+  color: black;
+  margin: 0;
+}
+
+.notUrlPopupSmall {
+  color: rgba(255, 0, 0, 0.677);
+  font-size: 16px;
+}
+
+.notUrlPopupBtnContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.notUrlPopupBtn {
+  outline: none;
+  border: none;
+  padding: 8px;
+  box-sizing: border-box;
+  background-color: #34444f;
+  color: #d9e2e6;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.notUrlPopupBtn:hover {
+  transform: scale(0.95);
+}
+
+.notUrlPopupBtn:active {
+  transform: scale(0.9);
+}
+
+.WindowHeaderControlsBlock {
+  display: flex;
+  margin-left: 20%;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.WindowHeaderReloadData {
+  font-size: 13px;
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: 25px;
+  outline: none;
+  height: 34.4px;
+  width: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.WindowHeaderReloadDataUnactive {
+  pointer-events: none; /* Отключает все взаимодействия с элементами */
+}
+
+.WindowHeaderReloadData::after {
+  content: attr(data-tooltip); /* Использует текст из атрибута data-tooltip */
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #d9e2e6;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.WindowHeaderReloadData:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.WindowHeaderReloadData:hover {
+  transform: scale(0.95);
+}
+
+.WindowHeaderReloadData:active {
+  transform: scale(0.9);
+}

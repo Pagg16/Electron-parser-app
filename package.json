@@ -1,0 +1,76 @@
+{
+  "name": "Parser",
+  "private": true,
+  "version": "1.0.7",
+  "type": "commonjs",
+  "main": "backend/main/electron.js",
+  "author": "The evil industry",
+  "productName": "Parser",
+  "icon": "public/assets/icon/IconApp.ico",
+  "build": {
+    "win": {
+      "icon": "public/assets/icon/IconApp.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "extraResources": [
+      {
+        "from": "node_modules/playwright",
+        "to": "node_modules/playwright"
+      }
+    ],
+    "npmRebuild": false
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "icon": "public/assets/icon/IconApp.ico"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run dev:vite\" \"npm run dev:electron\"",
+    "dev:vite": "vite",
+    "dev:electron": "electron .",
+    "start": "chcp 65001 && electron .",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "buildVite": "vite build",
+    "buildElectron": "electron-builder"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.5.0",
+    "chart.js": "^4.4.6",
+    "classnames": "^2.5.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "playwright": "^1.49.0",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.2.0",
+    "sharp": "^0.33.5",
+    "uuid": "^11.0.3",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "concurrently": "^9.1.0",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.11.0",
+    "sass": "^1.81.0",
+    "sass-embedded": "^1.81.0",
+    "vite": "^5.4.10",
+    "wait-on": "^8.0.1"
+  }
+}

@@ -1,0 +1,25 @@
+.starRatingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.starWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.starIcon {
+  width: 35px;
+  height: 35px;
+}
+
+.ratingText {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: auto;
+  text-wrap: nowrap;
+}

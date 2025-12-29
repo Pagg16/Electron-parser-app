@@ -1,0 +1,303 @@
+.productReviews {
+  position: relative;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  background-color: #d9e2e6;
+  border-radius: 20px;
+  box-sizing: border-box;
+  grid-row: span 2;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.3);
+  min-width: 295px;
+}
+
+.productReviewsContainer {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.productReviewsControlPanelContainer {
+  position: relative;
+}
+
+.reviewListContainer {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.reviewListContainer::-webkit-scrollbar {
+  width: 12px; /* Увеличиваем ширину вертикального скролла */
+}
+
+.reviewListContainer::-webkit-scrollbar-thumb {
+  background-color: #34444f; /* Цвет ползунка */
+  border-radius: 5px; /* Закругленные края */
+  border: 1px solid rgb(198, 198, 198);
+}
+
+.reviewListContainer::-webkit-scrollbar-track {
+  background-color: transparent; /* Цвет фона полосы прокрутки */
+}
+
+.reviewListContainer::-webkit-scrollbar-button {
+  background-color: transparent;
+}
+
+.productReviewsControlPanel {
+  border-bottom: 1px solid black;
+  margin-bottom: 5px;
+  padding: 5px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.productReviewsInformControlBar {
+  display: flex;
+  align-items: center;
+}
+
+.sortTitle {
+  font-weight: bold;
+  margin: 0;
+}
+
+.sortType {
+  margin: 0 5px;
+  width: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.sortButton {
+  outline: none;
+  cursor: pointer;
+  background-color: #34444f;
+  border: 1px solid rgb(198, 198, 198);
+  width: 25px;
+  height: 25px;
+  color: #d9e2e6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: transform 0.3s ease-in-out; /* Плавное вращение */
+}
+
+.sortButton_active {
+  transform: rotate(180deg); /* Вращение на 180 градусов */
+}
+
+.sortButton:active {
+  background-color: #34444f85;
+}
+
+.sortListType {
+  position: absolute;
+  background-color: #34444f;
+  right: 0;
+  top: 100%;
+  box-sizing: border-box;
+  border-radius: 0 0 10px 10px;
+  color: #d9e2e6;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 5px;
+  z-index: 20;
+}
+
+.sortListType_active {
+  padding: 10px;
+}
+
+.sortTypeElem {
+  cursor: pointer;
+}
+
+.sortTypeElem_select {
+  border-bottom: 1px solid;
+}
+
+.productReviewsInform {
+  font-weight: bold;
+}
+
+.reviewItem {
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2), inset 0 0 4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px 0;
+  cursor: help;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.generalInfoReview {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  overflow: hidden;
+}
+
+.reviewDateStarContainer {
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap-reverse;
+}
+
+.starRatingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.starIcon {
+  width: 13px;
+  height: 13px;
+}
+
+.ratingText {
+  font-size: 12px;
+}
+
+.date {
+  text-wrap: nowrap;
+  margin: 0;
+}
+
+.userName {
+  flex-shrink: 1; /* Позволяет тексту сжиматься */
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Стили для всплывающей подсказки */
+.userName:after {
+  content: attr(
+    data-tooltip
+  ); /* Используем атрибут data-tooltip для текста подсказки */
+  position: absolute;
+  top: 0; /* располагать подсказку ниже элемента */
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #d9e2e6;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.userName:hover::after {
+  display: block;
+  opacity: 1;
+}
+
+.productCharacteristics {
+  font-style: italic;
+  margin: 0;
+  flex-shrink: 1; /* Позволяет тексту сжиматься */
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.productCharacteristics:after {
+  content: attr(
+    data-tooltip
+  ); /* Используем атрибут data-tooltip для текста подсказки */
+  position: absolute;
+  top: 0; /* располагать подсказку ниже элемента */
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #d9e2e6;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.productCharacteristics:hover::after {
+  display: block;
+  opacity: 1;
+}
+
+.commentDetails {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.commentSummary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #d9e2e6;
+  padding: 5px 0;
+  font-size: 16px;
+  background-color: #34444f;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.reviewText {
+  margin-top: 10px;
+  font-size: 17px;
+  color: black;
+  line-height: 1.6;
+  word-wrap: break-word; /* Позволяет длинным словам переноситься на следующую строку */
+  overflow-wrap: break-word; /* Дополнительная опция для автопереноса */
+}
+
+/* Когда блок details раскрывается */
+.commentDetails[open] .reviewText {
+  max-height: none; /* Убираем ограничение на высоту */
+}
+
+.noFoundComments {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}

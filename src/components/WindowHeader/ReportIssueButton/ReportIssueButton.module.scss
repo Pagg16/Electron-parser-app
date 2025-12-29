@@ -1,0 +1,102 @@
+.ReportIssue {
+  position: relative;
+}
+
+.ReportIssueButton {
+  background-color: #34444f;
+  border: none;
+  border-radius: 30px;
+  border: 2px solid rgba(0, 0, 0, 0.622);
+  color: #d9e2e6;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 13px;
+  padding: 8px;
+}
+
+.ReportIssueButton:hover {
+  transform: scale(0.95);
+}
+
+.ReportIssueButton:active {
+  transform: scale(0.9);
+}
+
+.ReportIssueButtonPopup {
+  top: calc(100% + 3px);
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  z-index: 100;
+  border: none;
+  background-color: #a9b4b9;
+  border-radius: 20px;
+  padding: 0;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 0; /* Начальная высота */
+  overflow: hidden; /* Чтобы скрыть содержимое при height: 0 */
+  transition: height 0.3s ease-in-out, padding 0.5s ease-in-out;
+}
+
+.ReportIssueButtonPopup_open {
+  border: 2px solid rgba(0, 0, 0, 0.622);
+  height: 110px;
+  padding: 10px;
+}
+
+.ReportIssueButtons {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ReportIssueButtonControl {
+  outline: none;
+  border: none;
+  padding: 8px;
+  box-sizing: border-box;
+  background-color: #34444f;
+  color: #d9e2e6;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.ReportIssueButtonControl:hover {
+  transform: scale(0.95);
+}
+
+.ReportIssueButtonControl:active {
+  transform: scale(0.9);
+}
+
+.emailCopyContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyButton {
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.622);
+  background-color: #f0f0f0;
+  border-radius: 30px;
+  padding: 8px 0;
+  width: 101px;
+  text-align: center;
+}
+
+.copyButton:hover {
+  transform: scale(0.95);
+}
+
+.copyButton:active {
+  transform: scale(0.9);
+}

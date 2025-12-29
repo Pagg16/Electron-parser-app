@@ -1,0 +1,49 @@
+.ReviewChartRating {
+  background-color: #d9e2e6;
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.ReviewChartRatingBths {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  padding: 8px;
+}
+
+.ReviewChartRatingBth {
+  background-color: #34444f;
+  color: #d9e2e6;
+  padding: 2px;
+  margin: 0;
+  border-radius: 8px;
+}
+
+.ReviewChartRatingBth_active {
+  outline: 1px solid #34444f; /* Обводка */
+  outline-offset: 2px; /* Отступ обводки от границ элемента */
+}
+
+.ReviewChartRatingBth:last-child {
+  margin-left: 5px;
+}
+
+.commentsNotFound {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.ReviewChartRatingQuantityBth_disabled {
+  opacity: 0.6;
+}
